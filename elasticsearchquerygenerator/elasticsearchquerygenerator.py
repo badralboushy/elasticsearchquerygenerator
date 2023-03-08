@@ -1,6 +1,5 @@
-__AUTHOR__ = "Soumil Nitin Shah"
-__EMAIL__ = "shahsoumil519@gmail.com"
-
+__AUTHOR__ = "BADRALBOUSHY"
+__EMAIL__ = "badralboushy.scholar@gmail.com"
 
 try:
     import os

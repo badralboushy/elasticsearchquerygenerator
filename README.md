@@ -3,7 +3,7 @@
 ---------------------------
 
 
-# Elastic Search Query Generator  
+# Elastic Search Query Generator  By Badr
 
 #### what is Elastic Search Query Generator ?
 * While i was working with Elastic Search i found it very difficult to write complex queries as most of query are deep Nested 

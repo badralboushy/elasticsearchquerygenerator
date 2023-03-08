@@ -1,5 +1,5 @@
-__AUTHOR__ = "Soumil Nitin Shah"
-__EMAIL__ = "shahsoumil519@gmail.com"
+__AUTHOR__ = "BADRALBOUSHY"
+__EMAIL__ = "badralboushy.scholar@gmail.com"
 
 
 try:
@@ -111,7 +111,7 @@ class ElasticSearchQuery(object):
         }
         self.baseQuery["query"]["bool"][operation].append(_)
 
-    def add_aggreation(self, aggregate_name=None,
+    def add_aggregation(self, aggregate_name=None,
                        field=None,
                        type='terms',
                        sort='desc',
@@ -132,7 +132,7 @@ class ElasticSearchQuery(object):
         }
         self.aggtem.append(_)
 
-    def complete_aggreation(self):
+    def complete_aggregation(self):
         _ = {
             "aggs":{
 
@@ -194,7 +194,7 @@ class ElasticSearchQuery(object):
         self.baseQuery["query"]["bool"][operation].append(_)
         return self.baseQuery
 
-    def add_geo_aggreation(self, field=None,lat=None, lon=None, aggregate_name='distance'):
+    def add_geo_aggregation(self, field=None,lat=None, lon=None, aggregate_name='distance'):
         self.baseQuery.get("aggs")[aggregate_name] = {
             "geo_distance" : {
                 "field" : field,
@@ -229,7 +229,7 @@ class ElasticSearchQuery(object):
 
     def autocomplete_1(self, field=None,size=25, value=None, sort='des', operation='must'):
         query = self.match_phrase_prefix(field=field,value=value, operation=operation)
-        query  =self.add_aggreation(field=field, size=size, sort=sort,aggregate_name='auto_complete' )
-        query = self.complete_aggreation()
+        query  =self.add_aggregation(field=field, size=size, sort=sort,aggregate_name='auto_complete' )
+        query = self.complete_aggregation()
         return query
 
